@@ -1,0 +1,26 @@
+<mat-form-field style="width: 100%;">
+    <mat-label>Receiver</mat-label>
+    <mat-select [(ngModel)]="selectedReceiver">
+        <mat-option *ngFor="let receiver of receivers" [value]="receiver">
+            {{receiver}}
+        </mat-option>
+    </mat-select>
+</mat-form-field>
+<div *ngIf="selectedReceiver">
+    <mat-form-field style="width: 100%;">
+        <mat-label>Leave a message</mat-label>
+        <textarea matInput [ngModel]="content" (ngModelChange)="onInputMessageChange($event)"></textarea>
+    </mat-form-field>
+    <div class="" style="display: flex; justify-content: center;" *ngFor="let row of leds; index as row_index">
+        <div *ngFor="let column of row; index as column_index;">
+            <mat-radio-group>
+                <mat-radio-button [value]="this.leds[row_index][column_index]" #button (click)="checkState(row_index, column_index)"></mat-radio-button>   
+            </mat-radio-group>
+        </div>
+    </div>
+    <div style="display: flex; justify-content: end;">
+        <button mat-raised-button color="warn" (click)="clear();">Clear</button>
+        <button mat-raised-button color="warn" (click)="clearDrawing();" style="margin-left: 1em;">Clear Drawing</button>
+        <button mat-raised-button color="primary" (click)="send();" [disabled]="sendDisabled" style="margin-left: 1em;">Send</button>
+    </div>
+</div>

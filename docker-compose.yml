@@ -1,0 +1,14 @@
+version: '3'
+services:
+  message-device:
+    build:
+      context: ./application
+      dockerfile: ./Dockerfile
+    restart: always
+    volumes:
+      - "./data:/data"
+
+networks:
+  default:
+    external:
+      name: "proxy_net"
