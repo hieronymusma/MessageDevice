@@ -1,3 +1,5 @@
+[![PlatformIO CI](https://github.com/hieronymusma/MessageDevice/actions/workflows/device.yml/badge.svg)](https://github.com/hieronymusma/MessageDevice/actions/workflows/device.yml)
+[![Webapplication CI](https://github.com/hieronymusma/MessageDevice/actions/workflows/web-application.yml/badge.svg)](https://github.com/hieronymusma/MessageDevice/actions/workflows/web-application.yml)
 # MessageDevice (ESP8266)
 This project can be used to stay in contact with people you care about. You can send messages via a web application to a device including a quick drawing on a 8x8 LED Matrix (check out the pictures).
 ## Required Parts
